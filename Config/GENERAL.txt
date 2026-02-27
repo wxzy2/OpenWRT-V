@@ -8,6 +8,9 @@ CONFIG_PACKAGE_luci-app-wolplus=y
 #删除插件
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
 CONFIG_PACKAGE_luci-app-wol=n
+# 关闭限速/SQM 相关插件（不需要防 bufferbloat）
+CONFIG_PACKAGE_luci-app-sqm=n
+CONFIG_PACKAGE_sqm-scripts-nss=n
 #参数调整
 CONFIG_CCACHE=y
 CONFIG_DEVEL=y
