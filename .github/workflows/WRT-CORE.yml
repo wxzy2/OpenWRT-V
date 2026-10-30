@@ -193,7 +193,12 @@ jobs:
           $GITHUB_WORKSPACE/Scripts/Settings.sh
           $GITHUB_WORKSPACE/.github/scripts/prepare-build-host.sh
 
-          make defconfig -j$(nproc) && make clean -j$(nproc)
+          #设备专属排除：defconfig前写入，defconfig后校验
+          $GITHUB_WORKSPACE/Scripts/Excludes.sh apply
+          make defconfig -j$(nproc)
+          $GITHUB_WORKSPACE/Scripts/Excludes.sh check
+
+          make clean -j$(nproc)
 
       - name: Prepare Rust Toolchain
         if: ${{ !inputs.WRT_TEST }}
