@@ -13,8 +13,7 @@ CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_aria2=y
 
 # DDNS-Go（需确认当前软件源中的包名）
-CONFIG_PACKAGE_ddns-go=y
-
+CONFIG_PACKAGE_luci-app-ddns-go=y
 
 # ==========================================
 # 二、USB 接口及存储功能
